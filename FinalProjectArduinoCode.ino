@@ -30,7 +30,8 @@ void loop(){
   wristud_A4 = analogRead(wristud_A4_pin);
   wristrot_A5 = analogRead(wristrot_A5_pin);
 
-
+  turntable_A0 = turntable_A0 - 151;
+  
   if(shoulder_A1 > 635){
     shoulder_A1 = 635;
   }
@@ -55,12 +56,19 @@ void loop(){
 
   wristud_A4 = 1023 - wristud_A4;
 
-
+  wristrot_A5 = wristrot_A5 - 162;
+  
+  if(wristrot_A5 <=0){
+    wristrot_A5 = 0;
+  }
+  
 
   shoulder_Servo = (((((shoulder_A1/10) - 32)*23)/31.5)+25)*10;
   elbow_Servo = (((((elbow_A2/10) - 23)*26)/23)+14)*10;
   forearm_Servo = (((((forearm_A3/10) - 21)*41)/70.5)+14.5)*10;
   wristud_Servo = (((((wristud_A4/10) - 21.5)*45.5)/71.5)+14.5)*10;
+  
+  
   // Serial.println(shoulder_Servo);
   // Serial.println(elbow_Servo);
   // delay(100);
