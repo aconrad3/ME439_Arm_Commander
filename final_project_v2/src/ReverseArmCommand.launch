@@ -1,0 +1,4 @@
+<launch>
+<node name="Arduino2PythonPub" pkg="final_project_v2" type="Arduino2PythonPub.py" output="screen" />
+<node name="ReversePuppetArmSub" pkg="final_project_v2" type="ReversePuppetArmSub.py" output="screen" />
+</launch>
